@@ -6,22 +6,22 @@
 /*   By: jogutier <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/03 13:04:09 by jogutier          #+#    #+#             */
-/*   Updated: 2018/09/03 13:08:48 by jogutier         ###   ########.fr       */
+/*   Updated: 2018/09/04 09:26:51 by jogutier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_count_if(char **tab, int (*f) (char*))
+int		ft_count_if(char **tab, int (*f)(char*))
 {
-	int	i;
-	int	nb;
+	int		i;
+	int		n;
 
 	i = 0;
-	nb = 0;
-	while (tab[i][0] != '0')
+	n = 0;
+	while (tab[i])
 	{
 		if (f(tab[i]) == 1)
-			nb++;
-		i++;
+			n += 1;
+		i += 1;
 	}
-	return (nb);
+	return (n);
 }

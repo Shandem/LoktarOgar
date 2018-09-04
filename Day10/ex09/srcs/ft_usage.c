@@ -1,23 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_foreach.c                                       :+:      :+:    :+:   */
+/*   ft_usage.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jogutier <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/09/02 21:14:48 by jogutier          #+#    #+#             */
-/*   Updated: 2018/09/04 09:33:40 by jogutier         ###   ########.fr       */
+/*   Created: 2018/09/03 19:35:47 by jogutier          #+#    #+#             */
+/*   Updated: 2018/09/03 19:39:40 by jogutier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_foreach(int *tab, int length, void (*f)(int))
-{
-	int	i;
+#include <unistd.h>
 
-	i = 0;
-	while (i < length)
-	{
-		(*f)(tab[i]);
-		++i;
-	}
+int	ft_usage(int a, int b)
+{
+	write(1, "error : only [ + - * / % ] are accepted.\n", 41);
+	return (0);
 }

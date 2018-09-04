@@ -6,21 +6,23 @@
 /*   By: jogutier <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/02 21:18:37 by jogutier          #+#    #+#             */
-/*   Updated: 2018/09/02 21:27:26 by jogutier         ###   ########.fr       */
+/*   Updated: 2018/09/04 09:38:19 by jogutier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	*ftmap(int *tab, int length, int (*f)(int))
+#include <stdlib.h>
+
+int	*ft_map(int *tab, int length, int (*f)(int))
 {
 	int	i;
-	int	*p;
+	int	*r;
 
 	i = 0;
-	p = (int*)malloc(sizeof(int) * (length));
+	r = (int*)malloc(sizeof(int) * (length));
 	while (i < length)
 	{
-		p[i] = (*f)(tab[i]);
+		r[i] = (*f)(tab[i]);
 		++i;
 	}
-	return (p);
+	return (r);
 }
