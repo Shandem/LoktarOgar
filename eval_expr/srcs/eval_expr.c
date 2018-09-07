@@ -6,80 +6,80 @@
 /*   By: jogutier <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/05 12:08:46 by jogutier          #+#    #+#             */
-/*   Updated: 2018/09/05 12:08:53 by jogutier         ###   ########.fr       */
+/*   Updated: 2018/09/05 20:20:57 by jogutier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "../includes/functions.h"
 
-int		parse_parenthesis(char **str)
+int		parenth(char **str)
 {
 	int		nbr;
-	int		signe;
+	int		sign;
 
 	nbr = 0;
-	signe = 1;
+	sign = 1;
 	if ((*str)[0] == '+' || (*str)[0] == '-')
 	{
 		if ((*str)[0] == '-')
-			signe = -1;
-		*str = *str + 1;
+			sign = -1;
+		*str += 1;
 	}
 	if ((*str)[0] == '(')
 	{
-		*str = *str + 1;
-		nbr = primary_expression(str);
+		*str += 1;
+		nbr = primary(str);
 		if ((*str)[0] == ')')
-			*str = *str + 1;
-		return (signe * nbr);
+			*str += 1;
+		return (sign * nbr);
 	}
 	while ('0' <= (*str)[0] && (*str)[0] <= '9')
 	{
 		nbr = (nbr * 10) + (*str)[0] - '0';
-		*str = *str + 1;
+		*str += 1;
 	}
-	return (signe * nbr);
+	return (sign * nbr);
 }
 
-int		multiplicate_expression(char **str)
+int		multi(char **str)
 {
 	int		nb1;
 	int		nb2;
-	char	operator;
+	char	op;
 
-	nb1 = parse_parenthesis(str);
+	nb1 = parenth(str);
 	while ((*str)[0] == '*' || (*str)[0] == '/' || (*str)[0] == '%')
 	{
-		operator = (*str)[0];
-		*str = *str + 1;
-		nb2 = parse_parenthesis(str);
-		nb1 = do_op(nb1, nb2, operator);
+		op = (*str)[0];
+		*str += 1;
+		nb2 = parenth(str);
+		nb1 = do_op(nb1, nb2, op);
 	}
 	return (nb1);
 }
 
-int		primary_expression(char **str)
+int		primary(char **str)
 {
 	int		nb1;
 	int		nb2;
-	char	operator;
+	char	op;
 
-	nb1 = parse_parenthesis(str);
+	nb1 = parenth(str);
 	while ((*str)[0] != '\0' && (*str)[0] != ')')
 	{
-		operator = (*str)[0];
-		*str = *str + 1;
-		if (operator == '+' || operator == '-')
-			nb2 = multiplicate_expression(str);
+		op = (*str)[0];
+		*str += 1;
+		if (op == '+' || op == '-')
+			nb2 = multi(str);
 		else
-			nb2 = parse_parenthesis(str);
-		nb1 = do_op(nb1, nb2, operator);
+			nb2 = parenth(str);
+		nb1 = do_op(nb1, nb2, op);
 	}
 	return (nb1);
 }
 
-char	*remove_whitespaces(char *str)
+char	*remove_w(char *str)
 {
 	int		i;
 	int		j;
@@ -87,15 +87,16 @@ char	*remove_whitespaces(char *str)
 
 	i = 0;
 	j = 0;
-	str2 = malloc(sizeof(char) * (ft_strlen(str) + 1));
+	if (!(str2 = malloc(sizeof(char) * (ft_strlen(str) + 1))))
+		return (NULL);
 	while (str[i] != '\0')
 	{
 		if (str[i] != ' ')
 		{
 			str2[j] = str[i];
-			j = j + 1;
+			j +=  1;
 		}
-		i = i + 1;
+		i += 1;
 	}
 	str2[j] = '\0';
 	return (str2);
@@ -103,8 +104,8 @@ char	*remove_whitespaces(char *str)
 
 int		eval_expr(char *str)
 {
-	str = remove_whitespaces(str);
+	str = remove_w(str);
 	if (str[0] == '\0')
 		return (0);
-	return (primary_expression(&str));
+	return (primary(&str));
 }
