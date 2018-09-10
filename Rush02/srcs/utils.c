@@ -6,11 +6,11 @@
 /*   By: jogutier <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/08 11:33:22 by jogutier          #+#    #+#             */
-/*   Updated: 2018/09/08 15:46:57 by jogutier         ###   ########.fr       */
+/*   Updated: 2018/09/09 13:57:33 by jogutier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_rush.h"
+#include "headder.h"
 
 int		is_valid_format(char *str, int rows, int cols)
 {

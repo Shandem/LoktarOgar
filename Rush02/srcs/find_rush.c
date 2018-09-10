@@ -6,11 +6,11 @@
 /*   By: jogutier <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/08 16:15:58 by jogutier          #+#    #+#             */
-/*   Updated: 2018/09/08 16:16:01 by jogutier         ###   ########.fr       */
+/*   Updated: 2018/09/09 13:56:13 by jogutier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_rush.h"
+#include "headder.h"
 
 void	ft_putchar(char c)
 {
