@@ -19,29 +19,29 @@ void	ft_putchar(char c)
 
 void	ft_print_comb(void)
 {
-	int	numbers[3] = {48, 48, 48};
+	int	num[3] = {48, 48, 48}; /*ascii value of 0*/ /* num = number*/
 
-	while (numbers[0] <= 57)
+	while (num[0] <= 57)
 	{
-		if ((numbers[0] < numbers[1]) && (numbers[1] < numbers[2]))
+		if ((num[0] < num[1]) && (num[1] < num[2]))
 		{
-			ft_putchar(numbers[0]);
-			ft_putchar(numbers[1]);
-			ft_putchar(numbers[2]);
-			if (numbers[0] != 55)
+			ft_putchar(num[0]);
+			ft_putchar(num[1]);
+			ft_putchar(num[2]);
+			if (num[0] != 55)
 				ft_putchar(',');
-			if (numbers[0] != 55)
+			if (num[0] != 55)
 				ft_putchar(' ');
 		}
-		if (numbers[2]++ >= 57)
+		if (num[2]++ >= 57)
 		{
-			numbers[2] = 48;
-			numbers[1]++;
+			num[2] = 48;
+			num[1]++;
 		}
-		if (numbers[1] == 58)
+		if (num[1] == 58)
 		{
-			numbers[1] = 48;
-			numbers[0]++;
+			num[1] = 48;
+			num[0]++;
 		}
 	}
 }

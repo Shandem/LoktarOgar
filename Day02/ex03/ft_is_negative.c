@@ -21,7 +21,7 @@ void	ft_is_negative(void)
 {
 	char i;
 
-	i = 0;
+	i = 0; /* switching the number here 0,1 = P,  -1,-2 = N */
 	if (i>=0)
 		{
 			ft_putchar('P');

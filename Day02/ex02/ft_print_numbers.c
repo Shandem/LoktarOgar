@@ -24,7 +24,7 @@ void	ft_print_numbers(void)
 	while (i <= '9')
 	{
 		ft_putchar(i);
-		i = i + 1;
+		i += 1;
 	}
 }
 
