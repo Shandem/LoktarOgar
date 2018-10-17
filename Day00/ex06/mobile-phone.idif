@@ -10,10 +10,7 @@
 #                                                                              #
 # **************************************************************************** #
 
-#include <ldap.h>
-ldapwhoami -h ldap-master.42.us.org -Q| cut -d "," -f 1,2,3,4,5,6
-
+dn: uid=joshguti,ou=oct,ou=2018,ou=people,dc=42,dc=us,dc=org
 changetype: modify
-add: mobile
-mobile: 4086429472
-
+replace: mobile
+mobile: +14086429472
