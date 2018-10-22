@@ -10,7 +10,7 @@
 #                                                                              #
 # **************************************************************************** #
 
-dn: uid=joshguti,ou=oct,ou=2018,ou=people,dc=42,dc=us,dc=org
+dn:uid=joshguti,ou=october,ou=2018,ou=people,dc=42,dc=us
 changetype: modify
-replace: mobile
-mobile: +14086429472
+add: mobile
+mobile: 4086429472
