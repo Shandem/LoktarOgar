@@ -3,22 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jogutier <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: joshguti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/08/28 14:37:07 by jogutier          #+#    #+#             */
-/*   Updated: 2018/08/28 14:41:10 by jogutier         ###   ########.fr       */
+/*   Created: 2018/10/29 10:34:46 by joshguti          #+#    #+#             */
+/*   Updated: 2018/10/29 10:37:43 by joshguti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 char	*ft_strcpy(char *dest, char *src)
 {
-	unsigned int	i;
+	unsigned int i;
 
 	i = 0;
-	while (src[i] != '0')
+	while (src[i] != '\0')
 	{
-			dest[i] = src [i];
-			i++;
+		dest[i] = src[i];
+		i++;
 	}
 	dest[i] = src[i];
 	return (dest);

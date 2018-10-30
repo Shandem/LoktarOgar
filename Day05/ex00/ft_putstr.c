@@ -3,23 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jogutier <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: joshguti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/08/27 13:30:24 by jogutier          #+#    #+#             */
-/*   Updated: 2018/08/28 20:33:15 by jogutier         ###   ########.fr       */
+/*   Created: 2018/10/29 10:20:03 by joshguti          #+#    #+#             */
+/*   Updated: 2018/10/29 13:01:56 by joshguti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_putchar(char c);
+#include <unistd.h>
 
 void	ft_putstr(char *str)
 {
-	int	i;
+	int i;
 
 	i = 0;
 	while (str[i] != '\0')
-	{
-		ft_putchar(str[i]);
 		i++;
-	}
+	write(1, str, i);
 }
