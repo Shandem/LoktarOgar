@@ -12,17 +12,16 @@
 
 NAME = libft.a
 
-SRC = srcs/ft_putchar.c srcs/ft_putstr.c srcs/ft_swap.c srcs/ft_strlen.c srcs/ft_strcmp.c
+SRC = srcs/*.c
 
 all : $(NAME)
 
 $(NAME):
 		gcc -c -Wall -Werror -Wextra $(SRC)
-		ar rc $(NAME) ft_purchar.o ft_putstr.o ft_putswap.o ft_strlen.o ft_strcmp.o
-		ranlib $(NAME)
+		ar rc $(NAME) -o $(NAME)
 
 clean:
-		/bin/rm -f ft_putchar.o ft_putstr.o ft_swap.o ft_strlen.o ft_strcmp.o
+		/bin/rm -f *.o
 
 fclean: clean
 		/bin/rm -rf $(NAME)

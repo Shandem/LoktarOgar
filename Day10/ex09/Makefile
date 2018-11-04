@@ -12,12 +12,18 @@
 
 NAME=ft_advanced_do-op
 
-SRCS=srcs/do_op.c srcs/ft_atoi.c srcs/ft_add.c srcs/ft_div.c srcs/ft_mod.c srcs/ft_mul.c srcs/ft_sub.c srcs/ft_usage.c
+SRC = srcs/*.c
 
-all:
-	gcc $(SRCS) -o $(NAME)
+all : $(NAME)
+
+$(NAME):
+		gcc -c -Wall -Werror -Wextra $(SRC)
+		ar rc $(NAME) -o $(NAME)
 
 clean:
-	/bin/rm -f $(NAME)
+		/bin/rm -f *.o
 
-re: clean all
+fclean: clean
+		/bin/rm -rf $(NAME)
+
+re: fclean all
