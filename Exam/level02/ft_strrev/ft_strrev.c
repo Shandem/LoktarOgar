@@ -6,26 +6,40 @@
 /*   By: joshguti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/13 18:33:37 by joshguti          #+#    #+#             */
-/*   Updated: 2018/11/13 18:36:14 by joshguti         ###   ########.fr       */
+/*   Updated: 2018/11/14 16:47:15 by joshguti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char		*ft_strrev(char *str)
+char	*ft_strrev(char *str)
 {
 	int		i;
-	int		len;
-	char	t;
+	int		j;
+	char	tmp;
 
-	len = 0;
-	while (str[len])
-		len += 1;
-	i = -1;
-	while (++i < --len)
+	i = 0;
+	while (str[i])
+		i++;
+	i--;
+	j = 0;
+	while (j < i)
 	{
-		t = str[i];
-		str[i] = str[len];
-		str[len] = t;
+		tmp = str[i];
+		str[i] = str[j];
+		str[j] = tmp;
+		i--;
+		j++;
 	}
-	str[i] = '\0';
 	return (str);
+}
+
+#include <stdio.h>
+
+int		main()
+{
+	char	s[100] =  "12345";
+	
+	printf("%s\n", ft_strrev(s));
+	// s = ft_strrev(s);
+	// s = ft_strrev(s);
+	return (0);
 }
